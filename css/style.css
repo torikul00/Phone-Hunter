@@ -6,8 +6,7 @@
     font-family: 'Ubuntu', sans-serif;
 }
 body{
-    background-color: black;
-    color: white;
+  
 }
 .container{
     width: 100%;
@@ -28,6 +27,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #35858B;
+    
 
 }
 #search-input:focus{
@@ -37,7 +37,7 @@ body{
     border:none ;
     padding: 12px 33px;
     background-color:#22c1ccda ;
-    color: white;
+    
     border-radius: 5px;
     letter-spacing: 1.3px;
     font-size: 15px;
@@ -46,4 +46,51 @@ body{
 }
 #search-button:hover{
     background-color:#22c1cc ;
+}
+
+/* main section */
+
+#phones-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    
+
+}
+#phone{
+    border-radius: 5px;
+    border: 5px solid #22c1cc;
+    background-color: white;
+    box-shadow: 0px 5px 28px -1px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 0px 5px 28px -1px rgba(0,0,0,0.53);
+    color: black;
+    padding: 15px;
+
+}
+.img{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 10px;
+}
+#phone img {
+    width: 80%;
+    border-radius: 5px;
+}
+.details-button{
+    border:none ;
+    padding: 12px 33px;
+    background-color:#22c1ccda ;
+    border-radius: 5px;
+    letter-spacing: 1.1px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.button{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 10px 0px;
 }
