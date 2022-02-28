@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.title{
+    margin-bottom: 20px;
+    margin-top: 50px ;
+    font-size: 50px;
+}
+.trendy{
+    color: #22c1cc;
+}
+#search-input{
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #35858B;
+
+}
+#search-input:focus{
+    outline: 1px solid #35858B;
+}
+#search-button{
+    border:none ;
+    padding: 12px 33px;
+    background-color:#22c1ccda ;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1.3px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#search-button:hover{
+    background-color:#22c1cc ;
+}
