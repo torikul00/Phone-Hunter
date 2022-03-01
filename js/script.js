@@ -1,6 +1,6 @@
 document.getElementById('search-button').addEventListener('click', function () {
-   
     document.getElementById('spinner').style.display = 'block'
+   
     const searchInput = document.getElementById('search-input');
     const inputValue = searchInput.value;
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`
@@ -13,23 +13,36 @@ document.getElementById('search-button').addEventListener('click', function () {
 const getPhones = (phones) => {
     const phoneContainer = document.getElementById('phones-container');
     phoneContainer.innerHTML = ''
-    phones.forEach(phone => {
-        const phoneContainer = document.getElementById('phones-container');
-        const div = document.createElement('div');
-        div.innerHTML = `
-        <div id="phone">
-       <div class="img"> <img src="${phone.image}" alt=""></div>
-        <h1>${phone.phone_name}</h1>
-        <h2>Brand - ${phone.brand}</h2>
-      <div class="button"><button class="details-button" onclick="showPhoneInfo('${phone.slug}')">More Details</button> </div>
-       
-    </div>
-        `
-        phoneContainer.appendChild(div)
+     
+    if (phones.length == 0) {
+        document.getElementById('error').style.display = 'block'
         document.getElementById('spinner').style.display = 'none'
-        
+    }
 
-   })
+
+
+    else {
+        document.getElementById('error').style.display = 'none'
+        document.getElementById('spinner').style.display = 'block'
+        phones.forEach(phone => {
+            const phoneContainer = document.getElementById('phones-container');
+            const div = document.createElement('div');
+            div.innerHTML = `
+            <div id="phone">
+           <div class="img"> <img src="${phone.image}" alt=""></div>
+            <h1>${phone.phone_name}</h1>
+            <h2>Brand - ${phone.brand}</h2>
+          <div class="button"><button class="details-button" onclick="showPhoneInfo('${phone.slug}')">More Details</button> </div>
+           
+        </div>
+            `
+            phoneContainer.appendChild(div)
+     
+            
+            document.getElementById('spinner').style.display = 'none'
+       })
+    }
+
 }
 const showPhoneInfo = (phoneInfo) => {
     document.getElementById('spinner').style.display = 'block'
@@ -71,7 +84,7 @@ const singlePhoneInfo = (phoneInfo) => {
     <h3 class="features"> Others :</h3>
     <div class="feature">
         <p> <span>WLAN :</span>${phoneInfo.others.WLAN}</p>
-        <p><span>Bluetooth :</span>${phoneInfo.others.Bluetooth}{</p>
+        <p><span>Bluetooth :</span>${phoneInfo.others.Bluetooth}</p>
         <p><span>GPS :</span>${phoneInfo.others.GPS}</p>
         <p><span>NFC :</span>${phoneInfo.others.NFC}</p>
         <p><span>Radio :</span>${phoneInfo.others.Radio}</p>
@@ -80,8 +93,6 @@ const singlePhoneInfo = (phoneInfo) => {
 
     <h3 class="features"> Sensors :</h3>
     
-
- 
     `
     detailsContainer.appendChild(div);
     document.getElementById('spinner').style.display = 'none'
@@ -106,4 +117,5 @@ phoneInfo.mainFeatures.sensors.forEach(sensor => {
 
 const closeContainer = ()=> {
     document.getElementById('details-container').style.display = 'none'
+    
 }
