@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,61 +8,52 @@
     <title>Trendy Phone</title>
     <link rel="stylesheet" href="./css/style.css">
     <!-- Font Awesome -->
-   <script src="https://kit.fontawesome.com/f23def8632.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f23def8632.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <!-- spinner -->
-    <img id="spinner" src="./images/spinner.gif" alt="">
-    <!-- spinner -->
     <!-- search section -->
-<header>
-    <div class="container">
-   
+    <header>
+        <!-- spinner -->
+        <img id="spinner" src="./images/spinner.gif" alt="">
+        <!-- spinner -->
+        <div class="container">
 
-        <div class="">
-           
-            <h1 class="title">Search For <span class="trendy">Trendy</span> Phones</h1>
-            <input id="search-input" type="text" placeholder=" Search Phones">
-        <button id="search-button">Search</button>
-        
+            <div class="">
+                <h1 class="title">Find <span class="trendy">Trendy</span> Phones</h1>
+                <input id="search-input" type="text" placeholder=" Search Phones">
+                <button id="search-button">Search</button>
+            </div>
+
         </div>
-        
+
+    </header>
+    <!-- search section Ends -->
+
+    <!-- main section -->
+
+    <main>
+
+        <div id="error-container">
+            <div id="error">
+                <img src="./images/error.jpg" alt="">
+                <h1>No results found</h1>
+            </div>
         </div>
-</header>
-  <!-- search section Ends -->
 
-  <!-- main section -->
+        <div id="details-container">
+        </div>
 
-<main>
-
-<div id="error-container">
-
-    <div id="error">
-        <img src="./images/error.jpg" alt="">
-        <h1>No results found</h1>
-
-    </div>
-
-</div>
-
-<div id="details-container">
-
-    
-</div>
+        <div id="phones-container">
+        </div>
 
 
-
-    <div id="phones-container">
-        
-        
-    </div>
-
-   
-</main>
+    </main>
 
 
 
     <script src="./js/script.js"></script>
-    
+
 </body>
+
 </html>

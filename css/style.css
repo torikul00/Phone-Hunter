@@ -1,201 +1,268 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-*{
+
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-body{
-    background-color: black;
-    color: white;
-}
+
+/* header start from here */
 #spinner {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: none;
     z-index: 999;
 }
-.container{
+
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
 }
-.title{
+
+.title {
     margin-bottom: 20px;
-    margin-top: 50px ;
+    margin-top: 50px;
     font-size: 50px;
 }
-.trendy{
+
+.trendy {
     color: #22c1cc;
 }
-#search-input{
+
+#search-input {
     width: 400px;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid #35858B;
+    border: 2px solid white;
+    background-color: #22c1cc;
+    color: black;
+    font-size: 18px;
 }
-#search-input:focus{
+
+#search-input::placeholder {
+    color: white;
+    letter-spacing: 2px;
+}
+
+#search-input:focus {
     outline: 1px solid #35858B;
 }
-#search-button{
-    border:2px solid #22c1cc ;
+
+#search-button {
+    border: 3px solid #22c1cc;
     padding: 10px 33px;
-    background-color:black ;
-    border-radius: 5px;
+    background-color: #22c1cc;
+    border-radius: 6px;
     letter-spacing: 1.6px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     color: white;
 }
-#search-button:hover{
-    background-color:#22c1cc ;
+
+#search-button:hover {
+    background-color: #000000;
 }
 
 /* main section */
 
-#phones-container{
+#phones-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding:0px 50px;
+    padding: 0px 50px;
 }
-#phone{
-    border-radius: 5px;
-    border: 5px solid #e6f7f8;
-    background-color:#22c1cc ;
-    box-shadow: 0px 5px 28px -1px rgba(0,0,0,0.53);
-    -webkit-box-shadow: 0px 5px 28px -1px rgba(0,0,0,0.53);
+
+#phone {
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 5px 28px -1px rgba(0, 0, 0, 0.53);
+    -webkit-box-shadow: 0px 5px 28px -1px rgba(0, 0, 0, 0.53);
     color: black;
     padding: 15px;
 }
-.img{
+
+.img {
     width: 100%;
-   display: flex;
-   justify-content: center;
-   padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
 }
+
 #phone img {
     width: 60%;
     border-radius: 5px;
 }
-.details-button{
-    border:3px solid white ;
+
+/* header ends here */
+
+
+/* main start from here */
+.details-button {
+    border: 3px solid white;
     padding: 12px 33px;
-   background-color: #22c1cc;
-   color: white;
-    border-radius: 5px;
+    background-color: #22c1cc;
+    color: white;
+    border-radius: 8px;
     letter-spacing: 1.1px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
 }
-.details-button:hover{
-    background-color:black ;
+
+.details-button:hover {
+    background-color: black;
 }
-.button{
+
+.button {
     width: 100%;
-   display: flex;
-   justify-content: center;
-   padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
 }
+
 #error-container {
-  
+
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#error{
+
+#error {
     display: none;
 }
 
-
-#details-container{
+#details-container {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    border: 2px solid #22c1cc ;
-   background-color: white;
-   color: black !important;
-   color: white;
+    transform: translate(-50%, -50%);
+    border: 2px solid #22c1cc;
+    background-color: white;
+    color: black !important;
+    color: white;
     padding: 20px;
     width: 500px;
     height: 600px;
     overflow: scroll;
     border-radius: 10px;
     overflow-x: hidden;
-   
 }
-#release{
+
+#release {
     margin-bottom: 15px;
     text-align: center;
     margin: 10px 0px;
 }
-.feature{
+
+.feature {
     margin: 7px 0px;
     border: 1px solid rgba(0, 0, 0, 0.144);
     padding: 8px;
     border-radius: 6px;
 }
-.phone-image{
+
+.phone-image {
     width: 100%;
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
+
 .phone-image img {
     width: 60%;
-   
+
 }
-.features{
+
+.features {
     margin-top: 20px;
 }
+
 .feature p {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.11);
     padding: 10px 0px;
     line-height: 1.4;
-  
+
 }
+
 .feature span {
     font-size: 16px;
     padding-right: 10px;
     font-weight: bolder;
-    
+
 }
+
 .sensors {
     font-size: 16px;
     line-height: 1.4;
-   
+
 }
-#close-button{
+
+#close-button {
     width: 70px;
     position: absolute;
     top: 20px;
-    right:15px;
+    right: 15px;
     cursor: pointer;
 }
-.buy-button, .cancel-button{
+
+.buy-button, .cancel-button {
     margin: 20px 40px;
-    border:none ;
+    border: none;
     padding: 12px 33px;
-    background-color:#22c1ccc0 ;
+    background-color: #22c1ccc0;
     border-radius: 5px;
     letter-spacing: 1.1px;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-   
 }
-.cancel-button:hover{
-    background-color:#22c1cc ;
+
+.cancel-button:hover {
+    background-color: #22c1cc;
 }
-.buy-button:hover{
-    background-color:#22c1cc ;
+
+.buy-button:hover {
+    background-color: #22c1cc;
 }
+
+/* main ends from here */
+
+
+/* Responsive Code Start from Here */
+@media only screen and (max-width: 600px) {
+ 
+    .title{
+        font-size: 30px;
+        text-align: center;
+    }
+ #search-input{
+     width: 200px;
+ }
+#search-input::placeholder{
+    font-size: 14px;
+}
+#phones-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 0px 50px;
+}
+#details-container{
+    width: 350px;
+    height: 500px;
+}
+.buy-button, .cancel-button {
+    margin: 20px 10px;
+}
+
+  }

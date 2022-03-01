@@ -1,27 +1,24 @@
+
 document.getElementById('search-button').addEventListener('click', function () {
     document.getElementById('spinner').style.display = 'block'
-   
     const searchInput = document.getElementById('search-input');
     const inputValue = searchInput.value;
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`
     fetch(url)
         .then(res => res.json())
-        .then(data => getPhones(data.data))
+        .then(data => getPhones(data.data.slice(1, 21)))
     searchInput.value = ''
 })
+
+// get single object of phone
 
 const getPhones = (phones) => {
     const phoneContainer = document.getElementById('phones-container');
     phoneContainer.innerHTML = ''
-     
     if (phones.length == 0) {
         document.getElementById('error').style.display = 'block'
         document.getElementById('spinner').style.display = 'none'
-    }
-
-
-
-    else {
+    } else {
         document.getElementById('error').style.display = 'none'
         document.getElementById('spinner').style.display = 'block'
         phones.forEach(phone => {
@@ -37,13 +34,14 @@ const getPhones = (phones) => {
         </div>
             `
             phoneContainer.appendChild(div)
-     
-            
             document.getElementById('spinner').style.display = 'none'
-       })
+        })
     }
 
 }
+
+// get single phone information using slug 
+
 const showPhoneInfo = (phoneInfo) => {
     document.getElementById('spinner').style.display = 'block'
     const url = `https://openapi.programming-hero.com/api/phone/${phoneInfo}`
@@ -53,13 +51,11 @@ const showPhoneInfo = (phoneInfo) => {
     const container = document.getElementById('details-container');
     container.style.display = 'block'
     container.innerHTML = ''
-   
 }
 
+// show information into container
 
 const singlePhoneInfo = (phoneInfo) => {
-   
-
 
     const detailsContainer = document.getElementById('details-container');
     const div = document.createElement('div');
@@ -67,20 +63,15 @@ const singlePhoneInfo = (phoneInfo) => {
     <img onclick="closeContainer()" id="close-button" src="./images/close.png" alt="">
    <div class="phone-image"> <img src="${phoneInfo.image}" alt=""></div>
     <h5 id="release">${phoneInfo.releaseDate}</h5>
-
-    
     <h1>Model : ${phoneInfo.name}</h1>
     <h1>Brand : ${phoneInfo.brand}</h1>
     <h3 class="features"> Main Feature : </h3>
-
     <div class="feature">
      <p><span>Storage</span> : ${phoneInfo.mainFeatures.storage}</p>
      <p><span>Displaysize</span> : ${phoneInfo.mainFeatures.displaySize}</p>
      <p><span>Chipset</span> : ${phoneInfo.mainFeatures.chipSet}</p>
      <p><span>Memory</span> :  ${phoneInfo.mainFeatures.memory}</p> 
- 
     </div>
-    
     <h3 class="features"> Others :</h3>
     <div class="feature">
         <p> <span>WLAN :</span>${phoneInfo.others.WLAN}</p>
@@ -96,17 +87,18 @@ const singlePhoneInfo = (phoneInfo) => {
     `
     detailsContainer.appendChild(div);
     document.getElementById('spinner').style.display = 'none'
-        
-phoneInfo.mainFeatures.sensors.forEach(sensor => {
-    const detailsContainer = document.getElementById('details-container');
-    const span = document.createElement('span'); 
-    span.innerHTML = `
+
+    // show sensors into the container
+
+    phoneInfo.mainFeatures.sensors.forEach(sensor => {
+        const detailsContainer = document.getElementById('details-container');
+        const span = document.createElement('span');
+        span.innerHTML = `
     
     <span class="sensors">${sensor} ,</span>
     `
-    detailsContainer.appendChild(span)
-})
-    
+        detailsContainer.appendChild(span)
+    })
     const buttonDiv = document.createElement('div');
     buttonDiv.innerHTML = `
     <button onclick="closeContainer()" class = "buy-button">Buy Now</button>
@@ -114,8 +106,7 @@ phoneInfo.mainFeatures.sensors.forEach(sensor => {
     `
     detailsContainer.appendChild(buttonDiv)
 }
-
-const closeContainer = ()=> {
+const closeContainer = () => {
     document.getElementById('details-container').style.display = 'none'
-    
+
 }
