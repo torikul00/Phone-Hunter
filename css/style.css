@@ -6,13 +6,12 @@
     font-family: 'Ubuntu', sans-serif;
 }
 body{
-  
 }
 .container{
     width: 100%;
     display: flex;
     justify-content: center;
-    
+    margin-bottom: 50px;
 }
 .title{
     margin-bottom: 20px;
@@ -27,8 +26,6 @@ body{
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #35858B;
-    
-
 }
 #search-input:focus{
     outline: 1px solid #35858B;
@@ -37,7 +34,6 @@ body{
     border:none ;
     padding: 12px 33px;
     background-color:#22c1ccda ;
-    
     border-radius: 5px;
     letter-spacing: 1.3px;
     font-size: 15px;
@@ -55,8 +51,7 @@ body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-    
-
+    padding:0px 50px;
 }
 #phone{
     border-radius: 5px;
@@ -66,7 +61,6 @@ body{
     -webkit-box-shadow: 0px 5px 28px -1px rgba(0,0,0,0.53);
     color: black;
     padding: 15px;
-
 }
 .img{
     width: 100%;
@@ -93,4 +87,54 @@ body{
    display: flex;
    justify-content: center;
    padding: 10px 0px;
+}
+#details-container{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 2px solid #22c1cc ;
+   background-color: white;
+    padding: 20px;
+    width: 500px;
+    height: 600px;
+    overflow: scroll;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+#release{
+    margin-bottom: 15px;
+    text-align: center;
+    margin: 10px 0px;
+}
+.feature{
+    margin: 7px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.144);
+    padding: 8px;
+    border-radius: 6px;
+   
+    
+}
+.phone-image{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.phone-image img {
+    width: 60%;
+   
+}
+.features{
+    margin-top: 20px;
+}
+.feature h5 {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.11);
+    padding: 10px 0px;
+  
+}
+.feature span {
+    font-size: 16px;
+    padding-right: 10px;
+    
 }
