@@ -5,7 +5,13 @@
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
 }
-body{
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    z-index: 999;
 }
 .container{
     width: 100%;
@@ -102,6 +108,7 @@ body{
     overflow: scroll;
     border-radius: 10px;
     overflow-x: hidden;
+   
 }
 #release{
     margin-bottom: 15px;
@@ -128,13 +135,39 @@ body{
 .features{
     margin-top: 20px;
 }
-.feature h5 {
+.feature p {
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.11);
     padding: 10px 0px;
+    line-height: 1.4;
   
 }
 .feature span {
     font-size: 16px;
     padding-right: 10px;
+    font-weight: bolder;
     
+}
+.sensors {
+    font-size: 16px;
+    line-height: 1.4;
+   
+}
+#close-button{
+    width: 70px;
+    position: absolute;
+    top: 20px;
+    right:15px;
+    cursor: pointer;
+}
+.buy-button, .cancel-button{
+    margin: 20px 40px;
+    border:none ;
+    padding: 12px 33px;
+    background-color:#22c1ccda ;
+    border-radius: 5px;
+    letter-spacing: 1.1px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin
 }
